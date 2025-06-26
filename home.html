@@ -28,7 +28,6 @@
             overflow: hidden;
             position: relative;
             transition: transform 0.3s ease;
-            margin-bottom: 20px; /* Added margin to separate from footer */
         }
         
         .card:hover {
@@ -131,14 +130,6 @@
             background: #f9f5f0;
         }
         
-        .status-message {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 14px;
-            color: #6b3a10; /* Match the theme */
-            font-weight: 500;
-        }
-        
         .links {
             display: flex;
             flex-direction: column;
@@ -223,12 +214,11 @@
         
         footer {
             text-align: center;
-            padding: 10px; /* Reduced padding */
+            padding: 15px;
             font-size: 12px;
             color: #6b3a10;
             opacity: 0.7;
             background: white;
-            margin-top: 10px; /* Reduced margin */
         }
         
         .special-offer {
@@ -236,7 +226,7 @@
             top: -10px;
             right: 20px;
             background: #d9b76b;
-            color: #4b2c0e;
+            color: #4b3a10;
             padding: 5px 15px;
             border-radius: 20px;
             font-size: 12px;
@@ -245,7 +235,7 @@
             transform: rotate(10deg);
             z-index: 1;
         }
-        
+
         /* Floating Contact Window Styles */
         .contact-window {
             position: fixed;
@@ -318,20 +308,26 @@
             .card {
                 max-width: 100%;
             }
+            .dropdown-menu {
+                left: 10px;
+                right: 10px;
+                width: auto;
+            }
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <!-- Menu Icon -->
+        <!-- White Menu Icon -->
         <i class="fas fa-bars menu-icon" id="menuButton"></i>
         
         <!-- Dropdown Menu -->
         <div class="dropdown-menu" id="dropdownMenu">
-            <a href="home.html">Home</a>
+            <a href="home.html
+">Home</a>
             <a href="store.html">Online Store</a>
-            <!--<a href="#">Our Flavors</a> -->
-            <a href="#" id="contactLink">Contact Us</a>
+            <!--- <a href="#">Our Flavors</a>
+           <a href="#" id="contactLink">Contact Us</a>-->
             <a href="about_us.html">About Dopamichocolat</a>
         </div>
 
@@ -340,12 +336,76 @@
             <div class="chocolate-placeholder">
                 <img src="chocolat.png" alt="Dopamichocolat Logo" class="chocolate-img" />
             </div>
-            <h1 class="business-name">Dopamichocolat</h1>
+            <h1 class="business-name">Dopami Chocolat</h1>
+            <p class="tagline">Handcrafted Chocolate 😋</p>
+            <p class="description">Special homemade chocolates made with organic ingredients. Custom orders available!</p>
         </div>
         
         <div class="card-body">
-            <p class="status-message">What is Dopamichocolat 🤨?</p>
-            <p class="status-message">DopamiChocolate is made to brighten your days and illuminate your life. Your happiness matters to us.</p>
+            <div class="links">
+                <a href="store.html" class="link-item">
+                    <div class="link-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Online Store</div>
+                        <div class="link-desc">Order yours now</div>
+                    </div>
+                </a>
+                
+                <!-- <a href="#" class="link-item" target="_blank">
+                    <div class="link-icon">
+                        <i class="fas fa-candy-cane"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Flavors</div>
+                        <div class="link-desc">Discover our flavors</div>
+                    </div>
+                </a> -->
+                
+                <a href="#" class="link-item" id="contactLink">
+                    
+                    <div class="link-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Contact Us</div>
+                        <div class="link-desc">Phone & WhatsApp</div>
+                    </div>
+                </a>
+                
+                <a href="https://www.instagram.com/dopamichocolat_?utm_source=ig_web_button_share_sheet&igsh=cDdmMzN0OG5jeG13" class="link-item" target="_blank">
+                    <div class="link-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Instagram</div>
+                        <div class="link-desc">See our latest creations</div>
+                    </div>
+                </a>
+                
+                <a href="#" class="link-item" target="_blank">
+                    <div class="link-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <div class="link-text">
+                        <div class="link-title">Gift Boxes</div>
+                        <div class="link-desc">Perfect for any occasion</div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="#" class="social-link" target="_blank">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
         </div>
         
         <footer>
@@ -414,16 +474,14 @@
             overlay.classList.remove('show');
         });
 
-        // Add animation effects
+        // Animation effects
         document.addEventListener('DOMContentLoaded', function() {
             const linkItems = document.querySelectorAll('.link-item');
             
             linkItems.forEach((item, index) => {
-                // Set initial state
                 item.style.opacity = '0';
                 item.style.transform = 'translateX(-20px)';
                 
-                // Animate in with delay
                 setTimeout(() => {
                     item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
                     item.style.opacity = '1';
@@ -431,7 +489,6 @@
                 }, 100 + (index * 100));
             });
             
-            // Add click animation
             document.querySelectorAll('.link-item').forEach(item => {
                 item.addEventListener('click', function() {
                     this.style.transform = 'scale(0.95)';
@@ -441,7 +498,6 @@
                 });
             });
             
-            // Animate special offer tag
             const offerTag = document.querySelector('.special-offer');
             offerTag.style.transform = 'rotate(0deg) scale(0)';
             setTimeout(() => {
